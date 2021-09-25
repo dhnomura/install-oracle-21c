@@ -11,7 +11,7 @@ function check_dir {
         mkdir -p $DIR
         chown $RDBMS_OWNER:$PRODUCT_GROUP $DIR 
         chmod 775 $DIR
-        echo >> create_dir.out
+        echo "Directory $DIR created">> create_dir.out
     fi
 }
 
@@ -49,10 +49,10 @@ export ORACLE_SID=cdb1
 export PATH=$PATH:$PATH:$ORACLE_HOME/bin:$ORACLE_HOME/OPatch
 " >> /home/oracle/.bash_profile
 
-echo "
-export ORACLE_BASE=$GRID_BASE
-export ORACLE_HOME=$GRID_HOME
-export ORA_INVENTORY=$ORAIVENTORY
-export ORACLE_SID=cdb1
-export PATH=$PATH:$PATH:$ORACLE_HOME/bin:$ORACLE_HOME/OPatch
-" >> /home/grid/.bash_profile
+#echo "
+#export ORACLE_BASE=$GRID_BASE
+#export ORACLE_HOME=$GRID_HOME
+#export ORA_INVENTORY=$ORAIVENTORY
+#export ORACLE_SID=cdb1
+#export PATH=$PATH:$PATH:$ORACLE_HOME/bin:$ORACLE_HOME/OPatch
+#" >> /home/grid/.bash_profile

@@ -7,7 +7,6 @@ import subprocess   #Import subprocess
 import shlex        #Pass SO parameters
 import json         #Working with json
 
-
 # Functions
 
 def ask_yn(a):
@@ -70,20 +69,32 @@ ORACLE_INVENTORY=input("Oracle Inventory: (/u01/app/oraInventory) ") or "/u01/ap
 print(ORACLE_INVENTORY)
 
 Q_SOFT_LOCATION=input("Software download location (path) :")
-ask_yn(Q_SOFT_LOCATION)
+print(Q_SOFT_LOCATION)
 
 Q_SOFT_NAME=input("Software binary name, should be (LINUX.X64_213000_db_home.zip) :") or "LINUX.X64_213000_db_home.zip"
-ask_yn(Q_SOFT_NAME)
+print(Q_SOFT_NAME)
+
+Q_CREATE_USERS=input("Would you like to create users and groups? (Y/N)") or "Y"
+if Q_CREATE_USERS.lower() == 'y':
+    print('legal')
+    os.system('./create-users.sh')
+else:
+    print('Chato')
+
+Q_CREATE_USERS=input("Would you like to directories? (Y/N)") or "Y"
+if Q_CREATE_USERS.lower() == 'y':
+    print('legal')
+    os.system('./create-directories.sh')
+else:
+    print('Chato')
 
 Q_INSTALL_PACKAGES=input("Would you like to install missing package? (Y/N)")
 if Q_INSTALL_PACKAGES.lower() == 'y':
     print('legal')
-    os.system('./teste.sh')
+    os.system('install-missing-packagessh')
+    os.system('install-missing-packagessh')
 else:
     print('Chato')
-
-Q_CREATE_USERS=input("Would you like to create users and groups? (Y/N)")
-ask_yn(Q_CREATE_USERS)
 
 PARAMETERS={
         'install_package' : Q_INSTALL_PACKAGES,
