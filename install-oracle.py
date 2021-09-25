@@ -69,34 +69,6 @@ ask_yn(Q_INSTALL_PACKAGES)
 Q_CREATE_USERS=input("Would you like to create users and groups? (Y/N)")
 ask_yn(Q_CREATE_USERS)
 
-# #Create a JSON Object
-# json_obj = {}
-# json_obj['operating_system'] = []
-# json_obj['operating_system'].append({
-#     'product_group' : PRODUCT_GROUP,
-#     'rdbms_group' : RDBMS_GROUP,
-#     'rdbms_owner' : RDBMS_OWNER,
-#     'tfa_home': TFA_DIR,
-#     'oracle_base': ORACLE_BASE,
-#     'oracle_home': ORACLE_HOME,
-#     'oracle_nventory': ORACLE_INVENTORY
-# })
-# #Write the object to file.
-# with open('parameters.json','w') as jsonFile:
-#     json.dump(json_obj, jsonFile, indent=4)
-
-
-# print(json.dumps({
-#     'operating_system': {
-#         'product_group' : 'PRODUCT_GROUP',
-#         'rdbms_group' : 'RDBMS_GROUP',
-#         'rdbms_owner' : 'RDBMS_OWNER',
-#         'tfa_home': 'TFA_DIR',
-#         'oracle_base': 'ORACLE_BASE',
-#         'oracle_home': 'ORACLE_HOME',
-#         'oracle_nventory': 'ORACLE_INVENTORY'}}, sort_keys=True, indent=4))
-
-
 PARAMETERS={'operating_system': {
         'product_group' : PRODUCT_GROUP,
         'rdbms_group' : RDBMS_GROUP,
