@@ -2,9 +2,11 @@
 
 # libs
 
-import os       #Subprocess module
-import shlex    #Pass SO parameters
-import json     #Working with json
+import os           #OS module
+import subprocess   #Import subprocess
+import shlex        #Pass SO parameters
+import json         #Working with json
+
 
 # Functions
 
@@ -34,49 +36,72 @@ print('')
 print('################################################################')
 print('')
 
-Q_STARTING=input('Can we start? (Y/N)')
+Q_STARTING=input('Can we start? (Y/N)') or "Y"
 print(Q_STARTING)
 ask_yn(Q_STARTING)
 print('')
 
-PRODUCT_GROUP=input("Product group (oinstall) : ")
+Q_SOFT_DOWNLOADED=input("Did you already download the software? (Y/N)") or "Y"
+ask_yn(Q_SOFT_DOWNLOADED)
+print('')
+
+PRODUCT_GROUP=input("Product group (oinstall) : ") or "oinstall"
 print(PRODUCT_GROUP)
 
-RDBMS_OWNER=input("RDBMS Owner (oracle) : ")
+RDBMS_OWNER=input("RDBMS Owner (oracle) : ") or "oracle"
 print(RDBMS_OWNER)
 
-RDBMS_GROUP=input("RDBMS group (dba) : ")
-print(RDBMS_OWNER)
+RDBMS_GROUP=input("RDBMS group (dba) : ") or "dba"
+print(RDBMS_GROUP)
 
-STG_DIR=input("Stage area: ")
+STG_DIR=input("Stage area: ") 
 print(STG_DIR)
 
-TFA_DIR=input("TFA Dir: ")
+TFA_DIR=input("TFA Dir: (/u01/app/tfa) ") or "/u01/app/tfa"
 print(TFA_DIR)
 
-ORACLE_BASE=input("Oracle Base dir: (/u01/app/oracle) ")
+ORACLE_BASE=input("Oracle Base dir: (/u01/app/oracle) ") or "/u01/app/oracle"
 print(ORACLE_BASE)
 
-ORACLE_HOME=input("Oracle Home dir: (/u01/app/oracle/product/21.0.0/rdbms) ")
+ORACLE_HOME=input("Oracle Home dir: (/u01/app/oracle/product/21.0.0/rdbms) ") or "/u01/app/oracle/product/21.0.0/rdbms"
 print(ORACLE_HOME)
 
-ORACLE_INVENTORY=input("Oracle Inventory: (/u01/app/oraInventory) ")
+ORACLE_INVENTORY=input("Oracle Inventory: (/u01/app/oraInventory) ") or "/u01/app/oraInventory"
 print(ORACLE_INVENTORY)
 
+Q_SOFT_LOCATION=input("Software download location (path) :")
+ask_yn(Q_SOFT_LOCATION)
+
+Q_SOFT_NAME=input("Software binary name, should be (LINUX.X64_213000_db_home.zip) :") or "LINUX.X64_213000_db_home.zip"
+ask_yn(Q_SOFT_NAME)
+
 Q_INSTALL_PACKAGES=input("Would you like to install missing package? (Y/N)")
-ask_yn(Q_INSTALL_PACKAGES)
+if Q_INSTALL_PACKAGES.lower() == 'y':
+    print('legal')
+    os.system('./teste.sh')
+else:
+    print('Chato')
 
 Q_CREATE_USERS=input("Would you like to create users and groups? (Y/N)")
 ask_yn(Q_CREATE_USERS)
 
-PARAMETERS={'operating_system': {
-        'product_group' : PRODUCT_GROUP,
-        'rdbms_group' : RDBMS_GROUP,
-        'rdbms_owner' : RDBMS_OWNER,
-        'tfa_home': TFA_DIR,
-        'oracle_base': ORACLE_BASE,
-        'oracle_home': ORACLE_HOME,
-        'oracle_nventory': ORACLE_INVENTORY}}
+PARAMETERS={
+        'install_package' : Q_INSTALL_PACKAGES,
+        'create_users' : Q_CREATE_USERS,
+        'operating_system': {
+        'os_users': {
+            'rdbms_owner': RDBMS_OWNER
+        },
+        'os_groups':{
+            'product_group' : PRODUCT_GROUP,
+            'rdbms_group' : RDBMS_GROUP,
+            'rdbms_owner' : RDBMS_OWNER,
+        },
+        'directories': {
+            'tfa_home': TFA_DIR,
+            'oracle_base': ORACLE_BASE,
+            'oracle_home': ORACLE_HOME,
+            'oracle_nventory': ORACLE_INVENTORY}}}
 
 with open('parameters.json','w') as jsonFile:
     json.dump(PARAMETERS, jsonFile, indent=4)

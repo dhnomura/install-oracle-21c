@@ -1,11 +1,20 @@
 {
+    "install_package": "",
+    "create_users": "",
     "operating_system": {
-        "product_group": "oinstall",
-        "rdbms_group": "dba",
-        "rdbms_owner": "oracle",
-        "tfa_home": "/tmp",
-        "oracle_base": "/u01/app/oracle",
-        "oracle_home": "/u01/app/oracle/product/21.0.0/rdbms",
-        "oracle_nventory": "(/u01/app/oraInventory"
+        "os_users": {
+            "rdbms_owner": "oracle"
+        },
+        "os_groups": {
+            "product_group": "oinstall",
+            "rdbms_group": "dba",
+            "rdbms_owner": "oracle"
+        },
+        "directories": {
+            "tfa_home": "/u01/app/tfa",
+            "oracle_base": "/u01/app/oracle",
+            "oracle_home": "/u01/app/oracle/product/21.0.0/rdbms",
+            "oracle_nventory": "/u01/app/oraInventory"
+        }
     }
 }

@@ -1,1 +1,1 @@
-echo "Testando o SO"
+echo "Testando o PhtyonSO" >> teste.teste.teste
