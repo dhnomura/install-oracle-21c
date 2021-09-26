@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ORACLE_BASE=`cat parameters.json | jq '.operating_system.directories.oracle_base'|sed -e 's/^"//' -e 's/"$//'`
-PRODUCT_GROUP=`cat parameters.json | jq '.operating_system.directories.product_group'|sed -e 's/^"//' -e 's/"$//'`
-ORAIVENTORY=`cat parameters.json | jq '.operating_system.directories.oraInventory'|sed -e 's/^"//' -e 's/"$//'`
+PRODUCT_GROUP=`cat parameters.json | jq '.operating_system.os_groups.product_group'|sed -e 's/^"//' -e 's/"$//'`
+ORAIVENTORY=`cat parameters.json | jq '.operating_system.directories.oracleInventory'|sed -e 's/^"//' -e 's/"$//'`
 
 ASM_DISKGROUP_DATA_NAME=`cat parameters.json | jq -c '.grid.diskgroups[]|select(.dg_uso|contains("rdbms_data_cdb"     )).dg_name'|sed -e 's/^"//' -e 's/"$//'`
 ASM_DISKGROUP_DATA_REDUNDANCY=`cat parameters.json | jq -c '.grid.diskgroups[]|select(.dg_uso|contains("rdbms_data_cdb"     )).dg_redundancy'|sed -e 's/^"//' -e 's/"$//'`
@@ -14,7 +14,7 @@ ORACLE_HOME=`cat parameters.json | jq '.operating_system.directories.oracle_home
 RDBMS_GROUP=`cat parameters.json | jq '.operating_system.os_groups.rdbms_group'|sed -e 's/^"//' -e 's/"$//'`
 GRID_GROUP=`cat parameters.json | jq '.operating_system.os_groups.grid_group'|sed -e 's/^"//' -e 's/"$//'`
 GRID_OWNER=`cat parameters.json | jq '.operating_system.os_groups.grid_owner'|sed -e 's/^"//' -e 's/"$//'`
-RDBMS_OWNER=`cat parameters.json | jq '.operating_system.os_groups.database_owner'|sed -e 's/^"//' -e 's/"$//'`
+RDBMS_OWNER=`cat parameters.json | jq '.operating_system.os_groups.rdbms_owner'|sed -e 's/^"//' -e 's/"$//'`
 ORACLE_SID=`cat parameters.json | jq '.oracle_rdbms.sid_name'|sed -e 's/^"//' -e 's/"$//'`
 
 echo " 

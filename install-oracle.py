@@ -86,7 +86,7 @@ PARAMETERS={
                 'tfa_home': TFA_DIR,
                 'oracle_base': ORACLE_BASE,
                 'oracle_home': ORACLE_HOME,
-                'oracle_nventory': ORACLE_INVENTORY,
+                'oraInventory': ORACLE_INVENTORY,
                 'software_download_location': Q_SOFT_LOCATION,
                 'software_name': Q_SOFT_NAME
                 }
