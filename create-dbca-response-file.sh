@@ -36,8 +36,7 @@ echo "
 responseFileVersion=/oracle/assistants/rspfmt_dbca_response_schema_v21.0.0
 sid=$SID_NAME
 databaseConfigType=$DB_CONFIG_TYPE
-cdb_name=$CDB_NAME
-db_unq_name=$DB_UNQ_NAME
+gdbName=$CDB_NAME
 pdbName=$PDB_NAME
 pdbAdminPassword=$PDB_ADMIN_PASS
 templateName=$TEMPLATE_NAME

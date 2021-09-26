@@ -83,8 +83,8 @@ print(NCHARSET)
 PARAMETERS={'oracle_rdbms': {
                 'sid': SID_NAME,
                 'databaseConfigType': DB_CONFIG_TYPE,
-                'cdb_name': CDB_NAME,
-                'db_unq_name': DB_UNQ_NAME,
+                'gdbName': CDB_NAME,
+#                'db_unq_name': DB_UNQ_NAME,
                 'pdbName': PDB_NAME,
                 'pdbAdminPassword': PDB_ADMIN_PASS,
                 'templateName': TEMPLATE_NAME,
@@ -124,7 +124,7 @@ else:
 Q_INSTALL_PACKAGES=input("Would you like to create the database ? (Y/N) : ") or "Y"
 if Q_INSTALL_PACKAGES.lower() == 'y':
     print('Lets rock the world! ')
-    os.system('dbca -silent -responseFile dbca-create-db.rsp')
+    os.system('dbca -silent -createDatabase -responseFile dbca-create-db.rsp')
 else:
     print('Chato')
 
