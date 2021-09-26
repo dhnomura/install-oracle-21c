@@ -33,5 +33,5 @@ oracle.install.db.OSKMDBA_GROUP=$RDBMS_GROUP
 oracle.install.db.OSRACDBA_GROUP=$RDBMS_GROUP
 SECURITY_UPDATES_VIA_MYORACLESUPPORT=false
 DECLINE_SECURITY_UPDATES=true
-">setuprdbms.rsp
-chown $ORACLE_HOME:$PRODUCT_GROUP setuprdbms.rsp
+">/tmp/setuprdbms.rsp
+chown $ORACLE_HOME:$PRODUCT_GROUP /tmp/setuprdbms.rsp

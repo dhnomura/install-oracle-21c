@@ -125,12 +125,26 @@ if Q_INSTALL_PACKAGES.lower() == 'y':
 else:
     print('Chato')
 
-Q_FIX_KERNEL=input("Would you like to install missing package? (Y/N) : ") or "Y"
+Q_FIX_KERNEL=input("Would you like adjust kernel parameters? (Y/N) : ") or "Y"
 if Q_FIX_KERNEL.lower() == 'y':
     print('Adjusting kernel parameters')
     os.system('./customize-kernel.sh')
 else:
     print('Chato')
 
+Q_CREATE_RESPONSE=input("Would you like to create the installation response file? (Y/N) : ") or "Y"
+if Q_CREATE_RESPONSE.lower() == 'y':
+    print('Create universal installer response file')
+    os.system('./create-db-response-file.sh')
+    os.system('chmod 775 setuprdbms.rsp')
+else:
+    print('Chato')
+
+Q_INSTALL=input("Would you like to install the RDBMS SW? (Y/N) : ") or "Y"
+if Q_INSTALL.lower() == 'y':
+    print('Ok, lets rock the world!')
+    os.system('./install-rdbms-sw.sh')
+else:
+    print('Chato')
 
 print('Fim')

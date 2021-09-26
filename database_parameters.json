@@ -1,0 +1,17 @@
+{
+    "oracle_rdbms": {
+        "sid": "cdbdb01",
+        "databaseConfigType": "SI",
+        "cdb_name": "cdbdb01",
+        "db_unq_name": "cdbdb01",
+        "pdbName": "pdb01",
+        "pdbAdminPassword": "oracle",
+        "templateName": "/u01/app/oracle/product/21.0.0/rdbms/assistants/dbca/templates/New_Database.dbt",
+        "sysPassword": "oracle",
+        "systemPassword": "oracle",
+        "datafileDestination": "/u01/oradata/cdbdb01",
+        "recoveryAreaDestination": "/u01/oradata/flash_recovery_area/cdbdb01",
+        "characterSet": "AL32UTF8",
+        "nationalCharacterSet": "AL16UTF16"
+    }
+}
