@@ -75,3 +75,12 @@ Would you like to directories? (Y/N) : Y
 Would you like to extract Oracle Software Binary? (Y/N) : Y
 
 Would you like to install missing package? (Y/N) : Y
+
+Would you like adjust kernel parameters? (Y/N) : Y
+Adjusting kernel parameters
+
+Would you like to create the installation response file? (Y/N) : Y
+Create universal installer response file
+chown: invalid user: ‘/u01/app/oracle/product/21.0.0/rdbms:oinstall’
+chmod: cannot access 'setuprdbms.rsp': No such file or directory
+

@@ -2,7 +2,7 @@
 
 ORACLE_BASE=`cat parameters.json | jq '.operating_system.directories.oracle_base'|sed -e 's/^"//' -e 's/"$//'`
 PRODUCT_GROUP=`cat parameters.json | jq '.operating_system.os_groups.product_group'|sed -e 's/^"//' -e 's/"$//'`
-ORAIVENTORY=`cat parameters.json | jq '.operating_system.directories.oracleInventory'|sed -e 's/^"//' -e 's/"$//'`
+ORAIVENTORY=`cat parameters.json | jq '.operating_system.directories.oraInventory'|sed -e 's/^"//' -e 's/"$//'`
 
 ASM_DISKGROUP_DATA_NAME=`cat parameters.json | jq -c '.grid.diskgroups[]|select(.dg_uso|contains("rdbms_data_cdb"     )).dg_name'|sed -e 's/^"//' -e 's/"$//'`
 ASM_DISKGROUP_DATA_REDUNDANCY=`cat parameters.json | jq -c '.grid.diskgroups[]|select(.dg_uso|contains("rdbms_data_cdb"     )).dg_redundancy'|sed -e 's/^"//' -e 's/"$//'`
