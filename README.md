@@ -1,7 +1,11 @@
 # install-oracle-21c
 
 
-# Reqs
+# Prerequisite
+
+## Oracle Software
+
+Already downloaded Oracle software and transfer to database server
 
 ## RAM
 
