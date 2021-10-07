@@ -96,13 +96,6 @@ PARAMETERS={
 with open('parameters.json','w') as jsonFile:
     json.dump(PARAMETERS, jsonFile, indent=4)
 
-Q_CREATE_USERS=input("Would you like to extract Oracle Software Binary? (Y/N) : ") or "Y"
-if Q_CREATE_USERS.lower() == 'y':
-    print('Extracting Oracle Software')
-    os.system('./extract_sw_oracle.sh')
-else:
-    print('Chato')
-
 Q_CREATE_USERS=input("Would you like to create users and groups? (Y/N) : ") or "Y"
 if Q_CREATE_USERS.lower() == 'y':
     print('creating users and groups')
@@ -110,10 +103,17 @@ if Q_CREATE_USERS.lower() == 'y':
 else:
     print('Chato')
 
-Q_CREATE_USERS=input("Would you like to directories? (Y/N) : ") or "Y"
-if Q_CREATE_USERS.lower() == 'y':
+Q_CREATE_DIR=input("Would you like to directories? (Y/N) : ") or "Y"
+if Q_CREATE_DIR.lower() == 'y':
     print('creatig directories')
     os.system('./create-directories.sh')
+else:
+    print('Chato')
+
+Q_EXTRACT=input("Would you like to extract Oracle Software Binary? (Y/N) : ") or "Y"
+if Q_EXTRACT.lower() == 'y':
+    print('Extracting Oracle Software')
+    os.system('./extract_sw_oracle.sh')
 else:
     print('Chato')
 
