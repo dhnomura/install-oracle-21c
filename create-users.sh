@@ -22,5 +22,5 @@ groupadd $GRID_GROUP -g $group_counter; group_counter=$group_counter+1
 #groupadd asmdba -g 508
 #groupadd asmoper -g 509
 
-#useradd -u $user_counter -g $PRODUCT_GROUP -G $RDBMS_GROUP,$GRID_GROUP $GRID_OWNER; user_counter=$user_counter+1
-#useradd -u $user_counter -g $PRODUCT_GROUP -G $RDBMS_GROUP,$GRID_GROUP $RDBMS_OWNER; user_counter=$user_counter+1
+useradd -u $user_counter -g $PRODUCT_GROUP -G $RDBMS_GROUP,$GRID_GROUP $GRID_OWNER; user_counter=$user_counter+1
+useradd -u $user_counter -g $PRODUCT_GROUP -G $RDBMS_GROUP,$GRID_GROUP $RDBMS_OWNER; user_counter=$user_counter+1
