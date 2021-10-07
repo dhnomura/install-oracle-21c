@@ -3,11 +3,11 @@
 declare -i group_counter=`cat /etc/group|grep -v nobody| awk -F: '{print $3}'|sort -nrk1,1| head -1`+1
 declare -i user_counter=`cat /etc/passwd|grep -v nobody| awk -F: '{print $3}'|sort -nrk1,1| head -1`+1
 
-PRODUCT_GROUP=`cat parameters.json | jq '.operating_system.product_group'|sed -e 's/^"//' -e 's/"$//'`
-RDBMS_GROUP=`cat parameters.json | jq '.operating_system.rdbms_group'|sed -e 's/^"//' -e 's/"$//'`
-GRID_GROUP=`cat parameters.json | jq '.operating_system.grid_group'|sed -e 's/^"//' -e 's/"$//'`
-GRID_OWNER=`cat parameters.json | jq '.operating_system.grid_owner'|sed -e 's/^"//' -e 's/"$//'`
-RDBMS_OWNER=`cat parameters.json | jq '.operating_system.rdbms_owner'|sed -e 's/^"//' -e 's/"$//'`
+PRODUCT_GROUP=`cat parameters.json | jq '.operating_system.os_groups.product_group'|sed -e 's/^"//' -e 's/"$//'`
+RDBMS_GROUP=`cat parameters.json | jq '.operating_system.os_groups.rdbms_group'|sed -e 's/^"//' -e 's/"$//'`
+GRID_GROUP=`cat parameters.json | jq '.operating_system.os_groups.grid_group'|sed -e 's/^"//' -e 's/"$//'`
+GRID_OWNER=`cat parameters.json | jq '.operating_system.os_users.grid_owner'|sed -e 's/^"//' -e 's/"$//'`
+RDBMS_OWNER=`cat parameters.json | jq '.operating_system.os_users.rdbms_owner'|sed -e 's/^"//' -e 's/"$//'`
 
 
 
