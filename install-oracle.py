@@ -120,8 +120,8 @@ else:
 Q_INSTALL_PACKAGES=input("Would you like to install missing package? (Y/N) : ") or "Y"
 if Q_INSTALL_PACKAGES.lower() == 'y':
     print('installing missing packages')
-    os.system('./install-missing-packagessh')
-    os.system('./install-missing-packagessh')
+    os.system('./install-missing-packages.sh')
+    os.system('./install-missing-packages.sh')
 else:
     print('Chato')
 
